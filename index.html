@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <div class="loginImage">
+                    <img src="img/signup.svg" alt="log in image">
+                </div>
+                <div class="loginForm">
+                    <div class="loginWith">
+                        <span class="icon">
+                            <img src="img/google.png" alt="google icon">
+                        </span>
+                        <span class="operator">
+                            Continue with Google
+                        </span>
+                    </div>
+                    <div class="loginWith">
+                        <span class="icon">
+                            <img src="img/facebook.png" alt="facebook icon">
+                        </span>
+                        <span class="operator">
+                            Continue with Facebook
+                        </span>
+                    </div>
+                    <div class="secondChoice">
+                        <span class="ligne"></span>
+                        <span> or </span>
+                        <span class="ligne"></span>
+                    </div>
+                    <form action="" id="signup">
+                        <div class="inputField">
+                            <div class="fullName">
+                                <div class="firstName">
+                                    <label for="">First Name</label>
+                                    <input type="text" placeholder="John" required>
+                                </div>
+                                <div class="lastName">
+                                    <label for="">Last Name</label>
+                                    <input type="text" placeholder="Smith" required>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="inputField email">
+                            <label for="">Email</label>
+                            <input type="email" placeholder="example@gmail.com" required>
+                        </div>
+                        <div class="inputField password">
+                            <label for="">Password</label>
+                            <input type="password" placeholder="**********" required>
+                        </div>
+                        <div class="terms">
+                            By clicking SIGNUP, Continue with Google, Continue with Facbook you agree to our
+                            <a href="#"> Terms and Conditions </a> and <a href="#">Privacy Statement</a>
+                        </div>
+                        <input type="submit" value="Signup" class="submit">
+                        <div class="login">
+                            Already have an acoount? 
+                            <a href="#"> Login</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ----------------------------------- -->
+
+            <div class="flip-card-back">
+                <div class="loginImage">
+                    <img src="img/logIn.svg" alt="log in image">
+                </div>
+                <div class="loginForm">
+                    <div class="welcome">
+                        <p>Welcome back! login with your data that you entered during registration</p>
+                    </div>
+                    <div class="loginWith">
+                        <span class="icon">
+                            <img src="img/google.png" alt="google icon">
+                        </span>
+                        <span class="operator">
+                            Continue with Google
+                        </span>
+                    </div>
+                    <div class="loginWith">
+                        <span class="icon">
+                            <img src="img/facebook.png" alt="facebook icon">
+                        </span>
+                        <span class="operator">
+                            Continue with Facebook
+                        </span>
+                    </div>
+                    <div class="secondChoice">
+                        <span class="ligne"></span>
+                        <span> or </span>
+                        <span class="ligne"></span>
+                    </div>
+                    <form action="" id="login">
+                        <div class="inputField email">
+                            <label for="">Email</label>
+                            <input type="email" placeholder="example@gmail.com" required>
+                        </div>
+                        <div class="inputField password">
+                            <label for="">Password</label>
+                            <input type="password" placeholder="**********" required>
+                        </div>
+                        <div class="remeberOrForget">
+                            <div class="remeberMe">
+                                <input id="remeber" type="checkbox" name="remeber" id="remeberMe">
+                                <label for="remeber">Remeber me</label>
+                            </div>
+                            <div class="forgetPassword">
+                                Forget your password?
+                            </div>
+                        </div>
+                        <input type="submit" value="Login" class="submit">
+                        <div class="register">
+                            Don't have an account? 
+                            <a href="#"> Register</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="script.js"></script>
