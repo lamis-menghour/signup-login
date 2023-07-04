@@ -10,8 +10,8 @@ register.onclick = () => {
     flipCardInner.style.transform = 'rotateY(0deg)';
 }
 
-// -------------------------------------- SIGN UP ------------------------------------------
-usersJson = [
+// -------------------------------------- DATABASE ------------------------------------------
+const usersJson = [
     {
         id: 0,
         firstName: "lamis",
@@ -38,45 +38,50 @@ usersJson = [
 ];
 
 localStorage.users = JSON.stringify(usersJson);
-USERS = JSON.parse(localStorage.users);
+var USERS = JSON.parse(localStorage.users);
+console.log('check users accounts')
+console.log(USERS)
 var index = 3;
 
-var firstName = document.querySelector('form#signup .inputField .fullName .firstName input');
-var lastName = document.querySelector('form#signup .inputField .fullName .lastName input');
-var email = document.querySelector('form#signup .inputField.email input');
-var password = document.querySelector('form#signup .inputField.password input');
+// -------------------------------------- SIGN UP ------------------------------------------
+const firstName = document.querySelector('form#signup .inputField .fullName .firstName input');
+const lastName = document.querySelector('form#signup .inputField .fullName .lastName input');
+const email = document.querySelector('form#signup .inputField.email input');
+const password = document.querySelector('form#signup .inputField.password input');
 
+const signupForm = document.querySelector('form#signup');
+signupForm.addEventListener('submit', (e) => {
 
-function checkEmail() {
-    for (let i = 0; i < USERS.length; i++) {
-        if (USERS[i].email == email.value) {
-            email.value = "";
+    function validEmail() {
+        for (let i = 0; i < USERS.length; i++) {
+            if (USERS[i].email == email.value) {
+                // reset the Email input
+                email.value = "";
+            }
+        };
+        if (email.value == "") {
             return false;
         }
         else {
             return true;
         };
     };
-};
 
-const signupForm = document.querySelector('form#signup');
-signupForm.addEventListener('submit', (e) => {
-
-    if (checkEmail() == true) {
-        var newUser =
-        {
+    if (validEmail() == true) {
+        var newUser = {
             id: index,
             firstName: firstName.value,
             lastName: lastName.value,
             email: email.value,
             password: password.value
-        }
+        };
 
-        USERS.push(newUser)
+        USERS.push(newUser);
         localStorage.users = JSON.stringify(USERS);
 
         index += 1;
-        alert('You become a member in our family')
+        alert('You become a member in our family');
+
         // reset the Signup form
         firstName.value = "";
         lastName.value = "";
@@ -85,54 +90,45 @@ signupForm.addEventListener('submit', (e) => {
 
         flipCardInner.style.transform = 'rotateY(180deg)';
     }
-    else {
+    else if (validEmail() == false) {
         alert('Email allready exist');
-    }
+    };
 
     console.log('------------------ NEW SIGNUP --------------------');
-
 });
 
 
 // -------------------------------------- LOG IN ------------------------------------------
-var EMAIL = document.querySelector('form#login .inputField.email input');
-var PASSWORD = document.querySelector('form#login .inputField.password input');
-
-function loginFunction() {
-    for (let i = 0; i < USERS.length; i++) {
-        if (USERS[i].email == EMAIL.value) {
-            var ID = USERS[i].id;
-            if (USERS[ID].password == PASSWORD.value) {
-                return true;
-            }
-            else {
-                return false;
-            };
-        }
-        else {
-            return false;
-        }
-    };
-
-};
+const EMAIL = document.querySelector('form#login .inputField.email input');
+const PASSWORD = document.querySelector('form#login .inputField.password input');
 
 const loginForm = document.querySelector('form#login');
 loginForm.addEventListener('submit', () => {
-    if (loginFunction() == true) {
-        alert('Welcome back');
-        // reset the login form
-        EMAIL.value = "";
-        PASSWORD.value = "";
-    }
-    else if (loginFunction() == false) {
-        alert('Your email or password is incorrect');
-        // reset password
-        EMAIL.value = "";
-        PASSWORD.value = "";
+    function loginFunction() {
+        for (let i = 0; i < USERS.length; i++) {
+            if (USERS[i].email == EMAIL.value) {
+                var ID = USERS[i].id;
+                if (USERS[ID].password == PASSWORD.value) {
+                    return true;
+                }
+                else {
+                    return false;
+                };
+            };
+        };
     };
 
-    console.log('------------------ LOGIN --------------------');
+    if (loginFunction() == true) {
+        alert('Welcome back');
+    }
+    else {
+        alert('Your email or password is incorrect');
+    };
 
-})
+    // reset the login form
+    EMAIL.value = "";
+    PASSWORD.value = "";
+
+});
 
 // -------------------------------------- end of code ------------------------------------------
