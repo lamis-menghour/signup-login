@@ -10,6 +10,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(36, 52, 104);
+    overflow-x: hidden;
 }
 
 /* ------------------------------------------- */
@@ -18,6 +20,7 @@ body {
     width: 85vw;
     height: 90vh;
     perspective: 1000px;
+    border-radius: 25px;
 }
 
 .flip-card-inner {
@@ -26,9 +29,9 @@ body {
     height: 100%;
     transition: transform 0.6s;
     transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 25px;
-    border: 2px solid rgb(137, 147, 180);
+    border-radius: 26px;
+    box-shadow: 0 4px 8px 0 rgba(2, 2, 2, 0.2);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .flip-card-front,
@@ -37,8 +40,10 @@ body {
     width: 100%;
     height: 100%;
     display: flex;
-    border: 2px solid rgb(137, 147, 180);
+    justify-content: center;
+    align-items: center;
     border-radius: 26px;
+    border: 2px solid rgb(137, 147, 180);
     backface-visibility: hidden;
 
 }
@@ -64,6 +69,7 @@ body {
 
 .loginImage {
     width: 50%;
+    height: 100%;
     background-color: rgb(137, 147, 180);
     border-radius: 24px 0px 0px 24px;
 }
@@ -228,6 +234,11 @@ form {
 
 .terms a {
     color: rgb(52, 16, 136);
+    text-decoration: none;
+}
+
+.terms a:hover {
+    text-decoration: underline;
 }
 
 .submit {
@@ -242,12 +253,14 @@ form {
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    background-color: rgb(102, 109, 133);
+    background-color: rgb(36, 52, 104);
     border: 2px solid;
 }
 
 .submit:hover {
-    border-color: rgb(102, 109, 133);
+    background-color: rgb(102, 109, 133);
+
+    box-shadow: rgba(36, 52, 104, 0.5) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.5) 0px 18px 36px -18px inset;
 }
 
 .register,
